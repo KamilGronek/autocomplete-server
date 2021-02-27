@@ -2,11 +2,12 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const request = require("request");
+const port = process.env.PORT || 80;
 
 app.use(cors());
 app.use(express.json());
 
-app.listen(8000, function () {
+app.listen(port, function () {
   console.log("Listening!");
 });
 
