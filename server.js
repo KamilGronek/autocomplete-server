@@ -11,8 +11,8 @@ app.listen(port, function () {
   console.log("Listening!");
 });
 
-app.get("/api/nautocomplete/:value", function (req, res, next) {
-  const { value } = req.params;
+app.get("/api/nautocomplete/:value?", function (req, res, next) {
+  const value = req.params.value || "";
   if (isEmpty(value)) {
     res.status(200);
     res.json({
